@@ -1,0 +1,46 @@
+<!-- Recent Blog Posts Section -->
+    <div class="container">
+        <h2>Recent Blog Posts</h2>
+        <div class="blog-post" onclick="loadBlogPost('forex-trends')">
+            <h3>Understanding Forex Trends</h3>
+            <p>Discover key strategies to identify forex trends and make informed trading decisions.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="blog-post" onclick="loadBlogPost('crypto-strategies')">
+            <h3>Top 5 Crypto Trading Strategies</h3>
+            <p>Learn about the best crypto trading strategies used by professional traders.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="blog-post" onclick="loadBlogPost('stock-insights')">
+            <h3>Stock Market Insights for 2025</h3>
+            <p>Get expert predictions and insights into the stock market trends for 2025.</p>
+            <a href="#">Read More</a>
+        </div>
+        
+        <div id="full-blog-content" class="hidden"></div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 RPfx Trading</p>
+    </footer>
+
+    <script>
+        function logout() {
+            localStorage.removeItem("loggedIn"); // Remove login status
+            alert("Logged out successfully!");
+            window.location.href = "index.html"; // Redirect to home
+        }
+        
+        function loadBlogPost(postId) {
+            const blogContent = {
+                'forex-trends': `<h3>Understanding Forex Trends</h3><p>Forex trends help traders analyze market movements...</p>` ,
+                'crypto-strategies': `<h3>Top 5 Crypto Trading Strategies</h3><p>Crypto trading requires a good strategy...</p>`,
+                'stock-insights': `<h3>Stock Market Insights for 2025</h3><p>Stock markets are evolving with new trends...</p>`
+            };
+            
+            document.getElementById('full-blog-content').innerHTML = blogContent[postId];
+            document.getElementById('full-blog-content').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
