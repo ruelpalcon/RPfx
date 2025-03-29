@@ -1,52 +1,8 @@
-
-<!-- portfolio.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPfx Trading - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
 <script>
-    // Check if the user is logged in
-    if (!localStorage.getItem("loggedIn")) {
-        alert("You must log in first!");
-        window.location.href = "login.html"; // Redirect to login page
-    }
+    auth.onAuthStateChanged((user) => {
+        if (!user) {
+            alert("You must be logged in to view this page.");
+            window.location.href = "login.html";
+        }
+    });
 </script>
-
-<body>
-    <header>
-        <h1>RPfx Trading</h1>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <div class="container">
-        <h2>My Portfolio</h2>
-        <p>Track your past trades, strategies, and performance.</p>
-        <ul>
-            <li>Trade 1: Details...</li>
-            <li>Trade 2: Details...</li>
-            <li>Trade 3: Details...</li>
-        </ul>
-        
-        <h3>Upload a Trade Record</h3>
-        <form action="#" method="post" enctype="multipart/form-data">
-            <input type="file" name="trade-file" accept=".csv, .xlsx, .pdf">
-            <button type="submit">Upload</button>
-        </form>
-    </div>
-    
-    <footer>
-        <p>&copy; 2025 RPfx Trading</p>
-    </footer>
-</body>
-</html>
