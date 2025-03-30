@@ -22,3 +22,9 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
         console.error("Logout Error:", error);
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    let usernameInput = document.getElementById("username");
+    if (usernameInput) {
+        usernameInput.focus(); // Set focus automatically
+    }
+});
