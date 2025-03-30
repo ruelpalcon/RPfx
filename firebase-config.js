@@ -1,21 +1,20 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+// Import Firebase SDK
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Your Firebase Configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAiyTxPvkH-Pafr1vg-tVEbI7adKWWSmnA",
-  authDomain: "rpfx-trading.firebaseapp.com",
-  projectId: "rpfx-trading",
-  storageBucket: "rpfx-trading.firebasestorage.app",
-  messagingSenderId: "1018093031159",
-  appId: "1:1018093031159:web:02309e1537adb65e664df2",
-  measurementId: "G-Y1Q14V72TZ"
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const auth = getAuth(app);
+
+// Export auth for use in other files
+export { auth };
